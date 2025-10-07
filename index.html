@@ -1,0 +1,289 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TEEN🛹TONIC — Ropa para adolescentes</title>
+  <meta name="description" content="TEEN🛹TONIC: ropa para adolescentes. Moda, juntadas y salidas con estilo." />
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff6b9a;
+      --muted:#bcd0e6;
+      --white:#ffffff;
+      --glass: rgba(255,255,255,0.04);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071226 0%, #061528 100%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    header{
+      padding:22px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      position:sticky;
+      top:0;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(90deg, rgba(10,14,22,0.6), rgba(8,12,18,0.35));
+      border-bottom:1px solid rgba(255,255,255,0.03);
+      z-index:30;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+      letter-spacing:1px;
+      font-size:20px;
+    }
+    .logo{
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background: linear-gradient(135deg, #213a66, #0e2548);
+      box-shadow: 0 6px 20px rgba(10,10,30,0.6);
+      font-weight:900;
+      color:var(--white);
+      font-family: monospace;
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-size:14px;
+    }
+    nav a:hover{ color:var(--white) }
+
+    .container{
+      max-width:1100px;
+      margin:28px auto;
+      padding:0 20px;
+    }
+
+    .hero{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      padding:28px;
+      border-radius:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 30px rgba(3,7,18,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+      margin-bottom:26px;
+    }
+
+    .hero-left{
+      flex:1;
+      min-width:240px;
+    }
+    .hero-title{
+      font-size:28px;
+      margin:0 0 8px 0;
+      color:var(--white);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .tag{
+      font-size:13px;
+      padding:6px 8px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:8px;
+      font-weight:700;
+      box-shadow: 0 6px 18px rgba(255,107,154,0.14);
+    }
+
+    .hero p{
+      color:var(--muted);
+      margin:10px 0 18px 0;
+    }
+    .cta{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:10px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.08);
+      color:var(--white);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .cta.primary{
+      background:linear-gradient(90deg,#1b80ff,#5b3bff);
+      border:none;
+      box-shadow:0 10px 30px rgba(27,128,255,0.15);
+    }
+
+    .hero-right{
+      width:320px;
+      display:grid;
+      grid-template-columns:1fr;
+      justify-items:center;
+    }
+    .mock{
+      width:100%;
+      border-radius:10px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.03);
+      background:var(--glass);
+      padding:8px;
+    }
+    .mock img{ width:100%; display:block }
+
+    section h2{
+      margin-top:0;
+      font-size:20px;
+      color:var(--white);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.03);
+      margin-bottom:18px;
+    }
+
+    /* gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+      gap:12px;
+    }
+    .gallery img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:10px;
+      display:block;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    footer{
+      margin:28px 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    @media (max-width:800px){
+      .hero{flex-direction:column; align-items:stretch}
+      .hero-right{width:100%}
+      .hero-left{order:2}
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="logo">T🛹</div>
+      <div>
+        <div style="font-size:14px;color:var(--muted)">TEEN</div>
+        <div style="font-weight:800;letter-spacing:1px">🛹TONIC</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#inicio">INICIO</a>
+      <a href="#historia">HISTORIA</a>
+      <a href="#coleccion">COLECCIÓN</a>
+      <a href="#contacto">CONTACTO</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-title">
+          <span class="tag">TEEN🛹TONIC</span>
+          <span style="font-size:18px">Moda adolescente — Para juntadas, salidas y tu día a día</span>
+        </div>
+        <p><strong id="inicio">INICIO:</strong> Somos una marca especializada en ropa para adolescentes que busca seguir la moda. En nuestra Web vas a encontrar todo lo que busques y te guste: desde prendas para salir hasta básicos para estar cómodo/a en las juntadas. Estilo, comodidad y precios pensados en vos.</p>
+
+        <a class="cta primary" href="#coleccion">Ver colección</a>
+        <a class="cta" style="margin-left:8px" href="#historia">Conocé la historia</a>
+      </div>
+
+      <div class="hero-right">
+        <div class="mock">
+          <!-- imagen destacada (placeholder: primera subida) -->
+          <img src="/mnt/data/1016207C-B788-492F-973E-9F0FE0C6609B.jpeg" alt="Prenda destacada TEEN TONIC">
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="historia">
+      <h2>✦ HISTORIA</h2>
+      <p>
+        Todos pasamos por la adolescencia. Somos cuatro adolescentes que sabemos lo difícil y costoso que es encontrar ropa para salir, para las juntadas o simplemente para estar. Nuestra idea fue facilitarles la búsqueda a todos: curamos prendas con onda, seleccionamos estilos cómodos y hacemos una mezcla entre tendencia y economía. Creemos que la moda adolescente tiene que ser accesible, auténtica y divertida.
+      </p>
+    </section>
+
+    <section class="card" id="coleccion">
+      <h2>✦ COLECCIÓN</h2>
+      <p style="color:var(--muted)">Algunas piezas que representan nuestro estilo: denim custom, tops veraniegos, bikinis con onda, chaquetas tipo aviador y cinturones para darle actitud a cualquier look.</p>
+
+      <div class="gallery" aria-label="Galería TEEN TONIC">
+        <!-- imágenes subidas al contenedor -->
+        <img src="/mnt/data/DC523D3A-81B8-4BF6-BD88-4A6DA53558BB.jpeg" alt="Shorts jean con estrella roja">
+        <img src="/mnt/data/E573B9CB-0DE0-4A71-BC44-A43E6BBE13A8.jpeg" alt="Bikini azul">
+        <img src="/mnt/data/3696D247-1F58-482F-9936-B46AB043CC88.jpeg" alt="Remera deportiva">
+        <img src="/mnt/data/80EB030D-74DB-42B9-A191-9BF53B90B856.jpeg" alt="Pack de shorts y shorts deportivos">
+        <img src="/mnt/data/BCB77CE9-C56B-4691-AD1B-AA799BA83772.jpeg" alt="Cinturones estilo rocker">
+        <img src="/mnt/data/8D10FEE1-6D8B-4F9C-BF68-7CB4A9C50EC2.jpeg" alt="Campera tipo aviador con borrego">
+        <img src="/mnt/data/628FF8F8-5CD9-4692-966B-0D53C35EAC50.jpeg" alt="Top con encaje y pañuelo">
+        <img src="/mnt/data/255F5842-8531-4993-B67A-433731826748.jpeg" alt="Conjunto bikini blanco con pareo">
+        <img src="/mnt/data/E4BB965F-B583-4394-9C82-5EE97CEDA1CE.jpeg" alt="Jeans acampanados clásicos">
+      </div>
+    </section>
+
+    <section class="card" id="contacto">
+      <h2>✦ CONTACTO</h2>
+      <p style="color:var(--muted)">¿Querés que tu prenda aparezca en nuestra tienda o querés sumarte como colaborador/a? Escribinos y te respondemos rápido.</p>
+      <p style="margin:8px 0 0 0"><strong>Email:</strong> <a href="mailto:info@teentonic.example" style="color:var(--muted); text-decoration:none">info@teentonic.example</a></p>
+      <p style="margin:6px 0 0 0"><strong>Instagram:</strong> <a href="https://instagram.com/teentonic" target="_blank" rel="noopener" style="color:var(--muted); text-decoration:none">@teentonic</a></p>
+    </section>
+
+    <footer>
+      © <strong>TEEN🛹TONIC</strong> — Moda adolescente. Diseñado por adolescentes, para adolescentes.
+    </footer>
+
+  </main>
+
+  <script>
+    // navegación suave
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        if(!id || id === '#') return;
+        const el = document.querySelector(id);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  </script>
+
+</body>
+</html>
